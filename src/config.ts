@@ -20,12 +20,12 @@ export const config = {
 
   /** Floating photos + gallery photos */
   galleryPhotos: [
-    "/photos/photo1.jpg",
-    "/photos/photo2.jpg",
-    "/photos/photo3.jpg",
-    "/photos/photo4.jpg",
-    "/photos/photo5.jpg",
-    "/photos/photo6.jpg",
+    "/photos/photo1.jpeg",
+    "/photos/photo2.jpeg",
+    "/photos/photo3.jpeg",
+    "/photos/photo4.jpeg",
+    "/photos/photo5.jpeg",
+    "/photos/photo6.jpeg",
   ],
 
   /** Optional: drop a file in /public and set e.g. "/music/song.mp3" */

@@ -16,7 +16,7 @@ export const config = {
   timezoneOffsetMinutes: 5 * 60 + 30,
 
   /** Large hero photo (replace with a photo of her) */
-  mainPhoto: "/photos/main.jpg",
+  mainPhoto: "/photos/main.jpeg",
 
   /** Floating photos + gallery photos */
   galleryPhotos: [

@@ -29,7 +29,7 @@ export const config = {
   ],
 
   /** Optional: drop a file in /public and set e.g. "/music/song.mp3" */
-  backgroundMusic: null as string | null,
+  backgroundMusic: "/music/perfect.mp3",
 
   /** Intro length in ms */
   introDurationMs: 2600,

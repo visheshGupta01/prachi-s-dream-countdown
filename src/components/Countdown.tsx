@@ -19,7 +19,7 @@ function Separator({ delay, reducedMotion }: { delay: number; reducedMotion?: bo
 
 export function Countdown({ time, reducedMotion }: Props) {
   const units = [
-    { label: "Days", value: time.days, digits: 3 },
+    { label: "Days", value: time.days, digits: 2 },
     { label: "Hours", value: time.hours, digits: 2 },
     { label: "Minutes", value: time.minutes, digits: 2 },
     { label: "Seconds", value: time.seconds, digits: 2 },

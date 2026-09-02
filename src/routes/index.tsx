@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { config } from "@/config";
 import { useCountdown } from "@/hooks/useCountdown";
@@ -41,6 +41,33 @@ function Index() {
   const env = useEnvironment();
   const [intro, setIntro] = useState(true);
   const [selected, setSelected] = useState<string | null>(null);
+
+  function Index() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (!config.backgroundMusic) return;
+
+    const audio = new Audio(config.backgroundMusic);
+    audio.loop = true;
+    audioRef.current = audio;
+
+    // Start playing on first click/tap anywhere on the screen
+    const handleFirstInteraction = () => {
+      audio.play().catch((err) => {
+        console.warn("Autoplay was prevented:", err);
+      });
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+    };
+
+    window.addEventListener("pointerdown", handleFirstInteraction);
+
+    return () => {
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+      audio.pause();
+      audioRef.current = null;
+    };
+  }, []);
 
   useEffect(() => {
     const t = window.setTimeout(() => setIntro(false), config.introDurationMs);

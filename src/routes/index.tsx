@@ -41,8 +41,7 @@ function Index() {
   const env = useEnvironment();
   const [intro, setIntro] = useState(true);
   const [selected, setSelected] = useState<string | null>(null);
-
-  function Index() {
+  
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
